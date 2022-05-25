@@ -1,6 +1,7 @@
 package com.attachme.plugin;
 
-import com.intellij.ide.plugins.PluginManager;
+//import com.intellij.ide.plugins.PluginManager;
+import com.intellij.ide.plugins.PluginManagerCore;
 import com.intellij.openapi.extensions.PluginId;
 import com.intellij.openapi.util.io.FileUtil;
 
@@ -79,8 +80,8 @@ public class AttachmeInstaller {
   }
 
   private String packedJarName() {
-    String version = Objects.requireNonNull(PluginManager.getPlugin(PluginId.getId("com.attachme")),
-                                            "Plugin version cannot be null").getVersion();
+    String version = Objects.requireNonNull(
+      PluginManagerCore.getPlugin(PluginId.getId("com.attachme")), "Plugin version cannot be null").getVersion();
     return String.format("attachme-agent-%s.jar", version);
   }
 

@@ -16,8 +16,9 @@ public class ForkBomb {
     if (index <= 0){
       if (System.getenv().get("NO_WAIT") == null) {
         print("Reached the last level. Press any key...");
-        Scanner sc = new Scanner(System.in);
-        sc.next();
+        try (Scanner sc = new Scanner(System.in)) {
+          sc.next();
+        }
       }
     }else {
       new ProcessBuilder()
