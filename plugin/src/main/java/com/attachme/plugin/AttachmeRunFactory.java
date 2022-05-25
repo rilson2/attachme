@@ -9,6 +9,8 @@ import org.jetbrains.annotations.NotNull;
 
 class AttachmeRunFactory extends ConfigurationFactory {
 
+  static final String ID = "com.attachme"; 
+
   protected AttachmeRunFactory(@NotNull ConfigurationType type) {
     super(type);
   }
@@ -24,4 +26,11 @@ class AttachmeRunFactory extends ConfigurationFactory {
   public RunConfigurationSingletonPolicy getSingletonPolicy() {
     return RunConfigurationSingletonPolicy.SINGLE_INSTANCE_ONLY;
   }
+
+  @NotNull
+  @Override
+  public String getId() {
+    return ID;
+  }
+  
 }

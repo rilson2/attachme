@@ -86,6 +86,12 @@ public class AttachmeDebugger {
       public RunConfiguration createTemplateConfiguration(@NotNull Project project) {
         return new ProcessAttachRunConfiguration(project);
       }
+
+      @NotNull
+      @Override
+      public String getId() {
+        return "ProcessAttachRunConfigurationTypeFactory";
+      }
     };
 
     @NotNull
